@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Bepsvpt\SecureHeaders\SecureHeadersServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 
