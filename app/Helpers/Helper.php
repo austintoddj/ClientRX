@@ -14,6 +14,6 @@ class Helper extends Constants
      */
     public static function stripProtocolIdentifier($url)
     {
-        return preg_replace("(^https?://)", "", $url );
+        return preg_replace('(^https?://)', '', $url);
     }
 }
