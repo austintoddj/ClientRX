@@ -2,7 +2,7 @@
 
 namespace App\Meta;
 
-class Constants
+class Contants
 {
     //
 }
