@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected static $logAttributes = [
-        'name', 'email', 'password'
+        'name', 'email', 'password',
     ];
 
     /**
