@@ -8,7 +8,7 @@ class Role extends \Spatie\Permission\Models\Role
 {
     public static function defaultRoles()
     {
-        /**
+        /*
          * Return the default roles.
          *
          * @var array

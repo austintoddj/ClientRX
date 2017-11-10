@@ -10,7 +10,7 @@ class Constants
     const DEFAULT_ROLES = [
         'client',
         'admin',
-        'super_admin'
+        'super_admin',
     ];
 
     /**
@@ -25,7 +25,7 @@ class Constants
         'view_roles',
         'add_roles',
         'edit_roles',
-        'delete_roles'
+        'delete_roles',
     ];
 
     /**
