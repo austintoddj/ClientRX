@@ -1,8 +1,7 @@
 <?php
 
-use App\Models\User;
 use App\Models\Role;
-use App\Helpers\Helper;
+use App\Models\User;
 use App\Meta\Constants;
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
@@ -23,7 +22,7 @@ class DatabaseSeeder extends Seeder
             Permission::firstOrCreate(['name' => $perms]);
         }
 
-        foreach(Constants::DEFAULT_ROLES as $role) {
+        foreach (Constants::DEFAULT_ROLES as $role) {
             $role = Role::firstOrCreate(['name' => trim($role)]);
 
             switch ($role->name) {
@@ -48,7 +47,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // Display the results
-        $this->command->line(PHP_EOL."<info>[✔]</info> Done. You can log in with any of the following credentials:".PHP_EOL);
+        $this->command->line(PHP_EOL.'<info>[✔]</info> Done. You can log in with any of the following credentials:'.PHP_EOL);
         $headers = ['Id', 'Name', 'Email', 'Roles', 'Password'];
         $data = [];
 
@@ -58,7 +57,7 @@ class DatabaseSeeder extends Seeder
                 'name' => $user->name,
                 'email' => $user->email,
                 'roles' => implode(', ', $user->getRoleNames()->toArray()),
-                'password' => Constants::DEFAULT_USER_PASSWORD
+                'password' => Constants::DEFAULT_USER_PASSWORD,
             ]);
         }
 

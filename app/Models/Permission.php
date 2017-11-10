@@ -8,7 +8,7 @@ class Permission extends \Spatie\Permission\Models\Permission
 {
     public static function defaultPermissions()
     {
-        /**
+        /*
          * Return the default permissions.
          *
          * @var array
