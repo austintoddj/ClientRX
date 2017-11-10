@@ -80,7 +80,7 @@
     <div class="content">
         <div class="title m-b-md">
             {{ config('app.name', 'Laravel') }}
-        </div>
+        </div>z
 
         <div class="links">
             <a href="https://github.com/ClientRX" target="_blank">GitHub</a>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Meta\Constants;
 use Faker\Generator as Faker;
 
 /*
@@ -20,7 +21,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('password'),
+        'password' => bcrypt(Constants::DEFAULT_USER_PASSWORD),
         'remember_token' => str_random(10),
     ];
 });
