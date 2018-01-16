@@ -5,6 +5,7 @@ namespace App\Models;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\Traits\CausesActivity;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
