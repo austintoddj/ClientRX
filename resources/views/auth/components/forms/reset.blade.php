@@ -6,7 +6,7 @@
     <div class="login__block__body">
 
         <div class="form-group form-group--float form-group--centered">
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email or old('email') }}" required>
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
             @if ($errors->has('email'))
                 <span class="invalid-feedback">

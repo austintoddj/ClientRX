@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Forgot password')
+
 @section('content')
     <div class="login__block active" id="l-forget-password">
         <div class="login__block__header palette-Purple bg">
