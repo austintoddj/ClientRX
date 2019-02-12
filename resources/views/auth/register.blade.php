@@ -11,7 +11,7 @@
                     <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
 
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="{{ route('login') }}">Already have an account?</a>
+                        <a class="dropdown-item" href="{{ route('login') }}">Sign in</a>
                         <a class="dropdown-item" href="{{ route('password.request') }}">Forgot password?</a>
                     </div>
                 </div>

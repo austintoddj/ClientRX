@@ -6,11 +6,10 @@
  */
 
 require('./bootstrap');
-
+require('jquery.scrollbar');
+require('jquery-scroll-lock');
 require('./functions/app');
-
 require('./functions/vendors');
-
 require('./actions');
 
 window.Vue = require('vue');

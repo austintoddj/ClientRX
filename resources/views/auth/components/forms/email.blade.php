@@ -8,7 +8,7 @@
             </div>
         @endif
 
-        <p class="mt-4">Need help? <a href="#">Learn how to reset your password</a></p>
+        <p class="mt-4">Just need to confirm your email to send you instructions to reset your password.</p>
 
         <div class="form-group form-group--float form-group--centered">
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
