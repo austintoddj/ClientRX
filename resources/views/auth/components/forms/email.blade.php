@@ -1,0 +1,27 @@
+<form method="POST" action="{{ route('password.email') }}">
+    @csrf
+
+    <div class="login__block__body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <p class="mt-4">Need help? <a href="#">Learn how to reset your password</a></p>
+
+        <div class="form-group form-group--float form-group--centered">
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+            @endif
+            <label>Email Address</label>
+            <i class="form-group__bar"></i>
+        </div>
+
+        <button type="submit" class="btn btn--icon login__block__btn"><i class="zmdi zmdi-check"></i></button>
+    </div>
+</form>
