@@ -3,14 +3,26 @@
 
     <div class="login__block__body">
         <div class="form-group form-group--float form-group--centered">
-            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
+            <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required>
 
-            @if ($errors->has('name'))
+            @if ($errors->has('first_name'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('name') }}</strong>
+                    <strong>{{ $errors->first('first_name') }}</strong>
                 </span>
             @endif
-            <label>Name</label>
+            <label>First Name</label>
+            <i class="form-group__bar"></i>
+        </div>
+
+        <div class="form-group form-group--float form-group--centered">
+            <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required>
+
+            @if ($errors->has('last_name'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('last_name') }}</strong>
+                </span>
+            @endif
+            <label>Last Name</label>
             <i class="form-group__bar"></i>
         </div>
 

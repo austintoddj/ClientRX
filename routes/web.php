@@ -17,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
+    // Dashboard routes...
     Route::get('/', 'DashboardController')->name('dashboard');
+
+    // User routes...
+    Route::get('user', 'UserController@index')->name('user.index');
+    Route::post('user', 'ProfileController@update')->name('user.update');
 });

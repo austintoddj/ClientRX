@@ -3,12 +3,10 @@
 
     <div class="login__block__body">
         @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
+            <p class="mt-4 text-success">{{ session('status') }}</p>
+        @else
+            <p class="mt-4">Just need to confirm your email to send you instructions to reset your password.</p>
         @endif
-
-        <p class="mt-4">Just need to confirm your email to send you instructions to reset your password.</p>
 
         <div class="form-group form-group--float form-group--centered">
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>

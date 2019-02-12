@@ -2,13 +2,12 @@
     <div class="scrollbar-inner">
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
-                <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim(auth()->user()->email))), '?s=200') }}"
+                <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=200') }}"
                      class="user__img"
-                     alt="{{ auth()->user()->name }}"
-                >
+                     alt="{{ $data['user']->fullName }}">
                 <div>
-                    <div class="user__name">{{ auth()->user()->name }}</div>
-                    <div class="user__email">{{ auth()->user()->email }}</div>
+                    <div class="user__name">{{ $data['user']->fullName }}</div>
+                    <div class="user__email">{{ $data['user']->email }}</div>
                 </div>
             </div>
 
