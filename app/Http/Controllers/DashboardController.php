@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function __invoke()
     {
         $data = [
-            'user' => auth()->user()
+            'user' => auth()->user(),
         ];
 
         return view('dashboard.index', compact('data'));
