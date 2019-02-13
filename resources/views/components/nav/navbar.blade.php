@@ -14,7 +14,7 @@
     <form class="search">
         <div class="search__inner">
             <input type="text" class="search__text" placeholder="Search for people, files, documents...">
-            <i class="zmdi zmdi-search search__helper" data-ma-action="search-close"></i>
+            <i class="fas fa-search search__helper" data-ma-action="search-close"></i>
         </div>
     </form>
 
@@ -22,14 +22,14 @@
         <li class="hidden-xl-up"><a href="" data-ma-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
 
         <li class="dropdown">
-            <a href="" data-toggle="dropdown"><i class="zmdi zmdi-email"></i></a>
+            <a href="" data-toggle="dropdown"><i class="fas fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
                 <div class="listview listview--hover">
                     <div class="listview__header">
                         Messages
 
                         <div class="actions">
-                            <a href="messages.html" class="actions__item zmdi zmdi-plus"></a>
+                            <a href="messages.html" class="actions__item fas fa-plus"></a>
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@
 
         <li class="dropdown top-nav__notifications">
             <a href="" data-toggle="dropdown" class="top-nav__notify">
-                <i class="zmdi zmdi-notifications"></i>
+                <i class="fas fa-bell"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
                 <div class="listview listview--hover">
@@ -191,7 +191,7 @@
         </li>
 
         <li class="dropdown hidden-xs-down">
-            <a href="" data-toggle="dropdown"><i class="zmdi zmdi-check-circle"></i></a>
+            <a href="" data-toggle="dropdown"><i class="fas fa-check-circle"></i></a>
 
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
                 <div class="listview listview--hover">
@@ -253,7 +253,7 @@
         </li>
 
         <li class="dropdown hidden-xs-down">
-            <a href="" data-toggle="dropdown"><i class="zmdi zmdi-apps"></i></a>
+            <a href="" data-toggle="dropdown"><i class="fas fa-th"></i></a>
 
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
                 <div class="row app-shortcuts">
@@ -292,7 +292,7 @@
         </li>
 
         <li class="dropdown hidden-xs-down">
-            <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+            <a href="" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></a>
 
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item theme-switch">

@@ -13,11 +13,11 @@
             <small>Welcome to the unique Material Design admin web app experience!</small>
 
             <div class="actions">
-                <a href="" class="actions__item zmdi zmdi-trending-up"></a>
-                <a href="" class="actions__item zmdi zmdi-check-all"></a>
+                <a href="" class="actions__item fas fa-chart-line"></a>
+                <a href="" class="actions__item fas fa-check-double"></a>
 
                 <div class="dropdown actions__item">
-                    <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+                    <i data-toggle="dropdown" class="fas fa-ellipsis-v"></i>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="" class="dropdown-item">Refresh</a>
                         <a href="" class="dropdown-item">Manage Widgets</a>

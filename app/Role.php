@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Role
+use Illuminate\Database\Eloquent\Model;
+
+class Role extends Model
 {
     /**
      * The table associated with the model.

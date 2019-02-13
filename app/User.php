@@ -4,18 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     use Notifiable, SoftDeletes;
-
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
-    protected $guarded = [];
 
     /**
      * The table associated with the model.
@@ -46,12 +40,20 @@ class User extends Authenticatable
     public $incrementing = false;
 
     /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id', 'first_name', 'last_name', 'email', 'password',
+        'id', 'first_name', 'last_name', 'email', 'email_verified_at',
+        'password', 'role', 'bio', 'social',
     ];
 
     /**
@@ -60,7 +62,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -74,6 +77,26 @@ class User extends Authenticatable
     ];
 
     /**
+     * A user has one address.
+     *
+     * @return HasOne
+     */
+    public function address(): HasOne
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    /**
+     * A user has one phone number.
+     *
+     * @return HasOne
+     */
+    public function phoneNumber(): HasOne
+    {
+        return $this->hasOne(PhoneNumber::class);
+    }
+
+    /**
      * Get the full name of a user.
      *
      * @param $value
@@ -82,5 +105,16 @@ class User extends Authenticatable
     public function getFullNameAttribute($value): string
     {
         return sprintf('%s %s', $this->first_name, $this->last_name);
+    }
+
+    /**
+     * Get the full address for a user.
+     *
+     * @param $value
+     * @return string
+     */
+    public function getFullAddressAttribute($value): string
+    {
+        return sprintf('%s, %s %s', $this->address->address, $this->address->state, $this->address->zip);
     }
 }

@@ -5,7 +5,8 @@
 @section('content')
     <div class="login__block active" id="l-register">
         <div class="login__block__header palette-Blue bg">
-            <i class="zmdi zmdi-account-circle"></i>
+            <i class="fas fa-user-circle"></i>
+
             Reset your password
         </div>
 

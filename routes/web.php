@@ -21,6 +21,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'DashboardController')->name('dashboard');
 
     // User routes...
-    Route::get('user', 'UserController@index')->name('user.index');
-    Route::post('user', 'ProfileController@update')->name('user.update');
+    Route::prefix('user')->group(function () {
+        Route::get('{id}', 'UserController@show')->name('user.show');
+        Route::post('user', 'ProfileController@update')->name('user.update');
+    });
+
+    // Settings routes...
+    Route::prefix('settings')->group(function () {
+        Route::get('/', 'SettingsController@index')->name('settings.index');
+    });
 });

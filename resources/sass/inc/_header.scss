@@ -127,8 +127,8 @@
         padding: 0.5rem 0.15rem;
         min-width: 50px;
 
-        & > .zmdi {
-          font-size: 1.65rem;
+        & > .fas {
+          font-size: 1.35rem;
           line-height: 100%;
         }
       }
@@ -283,7 +283,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.3rem;
+  font-size: 1rem;
   height: 100%;
   width: 3rem;
   text-align: center;
@@ -313,7 +313,7 @@
     line-height: 2.9rem;
 
     &:before {
-      content: '\f301';
+      content: '\f061';
     }
   }
 }

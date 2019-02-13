@@ -20,6 +20,6 @@
             <i class="form-group__bar"></i>
         </div>
 
-        <button type="submit" class="btn btn--icon login__block__btn"><i class="zmdi zmdi-check"></i></button>
+            <button type="submit" class="btn btn--icon login__block__btn"><i class="fas fa-arrow-right"></i></button>
     </div>
 </form>

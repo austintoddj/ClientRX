@@ -2,18 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Request;
+use App\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     /**
-     * Show the authenticated user profile.
+     * Show a user profile.
      *
+     * @param Request $request
+     * @param $id
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function show(Request $request, $id)
     {
-        return view('user.index');
+        $user = User::with('address', 'phoneNumber')->find($id);
+
+        if ($user) {
+            $data = [
+                'user' => $user,
+            ];
+
+            return view('user.show', compact('data'));
+        } else {
+            abort(404);
+        }
     }
 
     /**

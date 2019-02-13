@@ -1,6 +1,9 @@
 
 // Fonts
-@import "~material-design-iconic-font/scss/material-design-iconic-font";
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
 
 // Variables
 @import "inc/variables";
@@ -32,7 +35,6 @@
 @import "inc/bootstrap-overrides/tooltip";
 
 // Core styles
-@import "inc/fonts";
 @import "inc/generics";
 @import "inc/utilities";
 @import "inc/base";

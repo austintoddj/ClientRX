@@ -75,12 +75,13 @@ $yiq-text-dark: #525a62;
 
 
 // Typography
-$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Nunito', sans-serif;
 $text-muted: #9c9c9c;
 $headings-color: #333;
-$font-weight-bold: 500;
-$font-family-icon: 'Material-Design-Iconic-Font';
+$font-weight-bold: 700;
+$font-family-icon: 'Font Awesome\ 5 Free';
 $font-size-root: 13.5px;
+$fa-font-path: "../fonts" !default;
 
 
 // Links
@@ -107,11 +108,6 @@ $input-focus-box-shadow: none;
 $input-padding-x: 0;
 $input-padding-x-lg: $input-padding-x;
 $input-padding-x-sm: $input-padding-x;
-
-
-// Form Validation
-$form-feedback-icon-valid: url(/resources/img/forms/form-validation-valid.svg);
-$form-feedback-icon-invalid: url(/resources/img/forms/form-validation-invalid.svg);
 
 
 // Checbox and Radio
