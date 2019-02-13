@@ -19,6 +19,6 @@ $factory->define(App\Address::class, function (Faker $faker) {
         'address' => $faker->streetAddress,
         'city' => $faker->city,
         'state' => $faker->stateAbbr,
-        'zip' => $faker->postcode
+        'zip' => $faker->postcode,
     ];
 });
