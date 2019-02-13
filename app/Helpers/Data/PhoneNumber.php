@@ -15,7 +15,7 @@ class PhoneNumber
         $number = self::withCountryCode($number);
 
         if (preg_match('/^(\d{1})(\d{3})(\d{3})(\d{4})$/', $number, $matches)) {
-            $result = '+' . $matches[1] . ' (' . $matches[2] . ') ' . $matches[3] . '-' . $matches[4];
+            $result = '+'.$matches[1].' ('.$matches[2].') '.$matches[3].'-'.$matches[4];
 
             return $result;
         }
@@ -55,7 +55,7 @@ class PhoneNumber
     private static function withCountryCode(string $number): string
     {
         if (strlen($number) == 10) {
-            $number = '1' . $number;
+            $number = '1'.$number;
         }
 
         return $number;

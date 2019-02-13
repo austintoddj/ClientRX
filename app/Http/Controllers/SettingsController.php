@@ -15,7 +15,7 @@ class SettingsController extends Controller
     public function index(Request $request)
     {
         $data = [
-            'user' => auth()->user()
+            'user' => auth()->user(),
         ];
 
         return view('settings.index', compact('data'));
