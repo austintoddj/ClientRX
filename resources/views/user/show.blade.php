@@ -14,11 +14,11 @@
                 <small>Web/UI Developer, Edinburgh, Scotland</small>
 
                 <div class="actions">
-                    <a href="" class="actions__item zmdi zmdi-trending-up"></a>
-                    <a href="" class="actions__item zmdi zmdi-check-all"></a>
+                    <a href="" class="actions__item fas fa-chart-line"></a>
+                    <a href="" class="actions__item fas fa-check-double"></a>
 
                     <div class="dropdown actions__item">
-                        <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+                        <i data-toggle="dropdown" class="fas fa-ellipsis-v"></i>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="" class="dropdown-item">Refresh</a>
                             <a href="" class="dropdown-item">Manage Widgets</a>
@@ -33,16 +33,16 @@
                     <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
                          alt="{{ $data['user']->name }}">
 
-                    <a href="" class="zmdi zmdi-camera profile__img__edit"></a>
+                    <a href="" class="fas fa-camera profile__img__edit"></a>
                 </div>
 
                 <div class="profile__info">
                     <p>{{ $data['user']->bio }}</p>
 
                     <ul class="icon-list">
-                        <li><i class="zmdi zmdi-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a></li>
-                        <li><i class="zmdi zmdi-email"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
-                        <li><i class="zmdi zmdi-twitter"></i> @mallinda-hollaway</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
+                        <li><i class="fab fa-twitter"></i> @mallinda-hollaway</li>
                     </ul>
                 </div>
             </div>
@@ -76,11 +76,11 @@
                     <h4 class="card-body__title mb-4">Contact Information</h4>
 
                     <ul class="icon-list">
-                        <li><i class="zmdi zmdi-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a></li>
-                        <li><i class="zmdi zmdi-email"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
-                        <li><i class="zmdi zmdi-facebook"></i>robertbosborne</li>
-                        <li><i class="zmdi zmdi-twitter"></i>@robertbosborne</li>
-                        <li><i class="zmdi zmdi-pin"></i>{{ $data['user']->fullAddress }}</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
+                        <li><i class="fab fa-facebook-f"></i>robertbosborne</li>
+                        <li><i class="fab fa-twitter"></i>@robertbosborne</li>
+                        <li><i class="fas fa-map-pin"></i>{{ $data['user']->fullAddress }}</li>
                     </ul>
                 </div>
             </div>

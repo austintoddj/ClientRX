@@ -1,6 +1,7 @@
 .footer {
   text-align: center;
   padding: 4rem 1rem 1rem;
+  font-weight: $font-weight-base;
 
   & > p {
     color: lighten($body-color, 20%);
@@ -22,7 +23,7 @@
 
     & + .nav-link {
       &:before {
-        @include font-icon('\f111', 6px);
+        @include font-icon('\f111', 4px);
         position: relative;
         left: -1.2rem;
         top: -0.2rem;

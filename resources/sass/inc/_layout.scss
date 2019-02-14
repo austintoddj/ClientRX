@@ -51,7 +51,7 @@
 
   & > h1 {
     line-height: 100%;
-    font-weight: normal;
+    font-weight: $font-weight-base;
     font-size: 1.15rem;
     margin: 0;
     text-transform: uppercase;
@@ -66,6 +66,7 @@
 
   & > small {
     font-size: 1rem;
+    font-weight: $font-weight-base;
     display: block;
     margin-top: 0.8rem;
     color: lighten($content-title-heading-color, 18%);

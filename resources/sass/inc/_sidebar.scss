@@ -48,6 +48,10 @@
   .dropdown-menu {
     width: 100%;
     transform: none !important;
+
+    & > a {
+      font-weight: $font-weight-base;
+    }
   }
 }
 
@@ -81,6 +85,7 @@
   color: $text-muted;
   margin-top: 0.1rem;
   line-height: 100%;
+  font-weight: $font-weight-base !important;
 }
 
 
@@ -120,7 +125,7 @@
         top: 0.1rem;
         width: 1.5rem;
         text-align: center;
-        margin-right: 0.6rem;
+        margin-right: 1rem;
       }
     }
   }

@@ -5670,6 +5670,19 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?d9d17590c975aad1be0ddab673f9c769);
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?d9d17590c975aad1be0ddab673f9c769) format("embedded-opentype"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?4b115e1153a9ea339d6a0bb284cc8ed3) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff?b90365bccdabd68c6c03902b4b141f09) format("woff"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?c39278f7abfc798a241551194f55e29f) format("truetype"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg?80533988ff5fecd5be26557d08ce8237) format("svg");
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+
+@font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
@@ -5685,7 +5698,7 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Bootstrap v4.3.0 (https://getbootstrap.com/)
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -5761,7 +5774,7 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: #747a80;
   text-align: left;
@@ -7664,7 +7677,7 @@ pre code {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: #495057;
   background-color: transparent;
@@ -9651,7 +9664,7 @@ input[type=button].btn-block {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 1rem 0.375rem 0;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: #495057;
   vertical-align: middle;
@@ -9749,7 +9762,7 @@ input[type=button].btn-block {
   z-index: 1;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: #495057;
   background-color: transparent;
@@ -17980,7 +17993,7 @@ textarea {
 
 .content__title > h1 {
   line-height: 100%;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 1.15rem;
   margin: 0;
   text-transform: uppercase;
@@ -17995,6 +18008,7 @@ textarea {
 
 .content__title > small {
   font-size: 1rem;
+  font-weight: 600;
   display: block;
   margin-top: 0.8rem;
   color: #959595;
@@ -18200,9 +18214,9 @@ textarea {
 .icon-list > li > i {
   width: 2.5rem;
   text-align: center;
-  font-size: 1.25rem;
   top: 0.12rem;
   position: relative;
+  margin-right: 0.25rem;
   margin-left: -0.5rem;
 }
 
@@ -18347,8 +18361,8 @@ textarea {
 
 .header__logo > h1 {
   line-height: 100%;
-  font-size: 1.3rem;
-  font-weight: normal;
+  font-size: 1.5rem;
+  font-weight: bolder;
   margin: 0;
 }
 
@@ -18517,6 +18531,7 @@ textarea {
 }
 
 .search__text {
+  font-weight: 600;
   border: 0;
   border-radius: 2px;
   height: 2.9rem;
@@ -18628,7 +18643,7 @@ textarea {
   }
 
   .search__helper:before {
-    content: "\F301";
+    content: "\F061";
   }
 
   .search__helper:hover {
@@ -18690,6 +18705,7 @@ textarea {
   font-size: 0.95rem;
   color: #9c9c9c;
   transition: color 500ms;
+  font-weight: 600;
 }
 
 .app-shortcuts__helper {
@@ -18750,6 +18766,7 @@ textarea {
 .footer {
   text-align: center;
   padding: 4rem 1rem 1rem;
+  font-weight: 600;
 }
 
 .footer > p {
@@ -18780,7 +18797,7 @@ textarea {
 .footer__nav .nav-link + .nav-link:before {
   font-family: "Font Awesome 5 Free";
   content: "\F111";
-  font-size: 6px;
+  font-size: 4px;
   position: relative;
   left: -1.2rem;
   top: -0.2rem;
@@ -18856,6 +18873,10 @@ textarea {
           transform: none !important;
 }
 
+.user .dropdown-menu > a {
+  font-weight: 600;
+}
+
 .user__info {
   display: flex;
   align-items: center;
@@ -18886,6 +18907,7 @@ textarea {
   color: #9c9c9c;
   margin-top: 0.1rem;
   line-height: 100%;
+  font-weight: 600 !important;
 }
 
 .navigation {
@@ -18918,7 +18940,7 @@ textarea {
   top: 0.1rem;
   width: 1.5rem;
   text-align: center;
-  margin-right: 0.6rem;
+  margin-right: 1rem;
 }
 
 .navigation__sub > ul {
@@ -20125,6 +20147,7 @@ textarea {
 }
 
 .login {
+  font-weight: 600;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -20196,6 +20219,10 @@ textarea {
 
 .login__block__actions .dropdown:not(.show) {
   display: none;
+}
+
+.dropdown-menu a.dropdown-item {
+  font-weight: 600;
 }
 
 .login__block__body {
@@ -22112,7 +22139,7 @@ textarea {
 }
 
 span.flatpickr-weekday {
-  font-weight: 400;
+  font-weight: 600;
   color: #333;
 }
 

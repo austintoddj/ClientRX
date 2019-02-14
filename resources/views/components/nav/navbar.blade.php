@@ -19,7 +19,7 @@
     </form>
 
     <ul class="top-nav">
-        <li class="hidden-xl-up"><a href="" data-ma-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
+        <li class="hidden-xl-up"><a href="" data-ma-action="search-open"><i class="fas fa-search"></i></a></li>
 
         <li class="dropdown">
             <a href="" data-toggle="dropdown"><i class="fas fa-envelope"></i></a>
@@ -107,7 +107,7 @@
                         Notifications
 
                         <div class="actions">
-                            <a href="" class="actions__item zmdi zmdi-check-all" data-ma-action="notifications-clear"></a>
+                            <a href="" class="actions__item fas fa-check-double" data-ma-action="notifications-clear"></a>
                         </div>
                     </div>
 
@@ -258,32 +258,32 @@
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
                 <div class="row app-shortcuts">
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-calendar"></i>
+                        <i class="fas fa-calendar-alt"></i>
                         <small class="">Calendar</small>
                         <span class="app-shortcuts__helper bg-red"></span>
                     </a>
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-file-text"></i>
+                        <i class="fas fa-file"></i>
                         <small class="">Files</small>
                         <span class="app-shortcuts__helper bg-blue"></span>
                     </a>
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-email"></i>
+                        <i class="fas fa-envelope"></i>
                         <small class="">Email</small>
                         <span class="app-shortcuts__helper bg-teal"></span>
                     </a>
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-trending-up"></i>
+                        <i class="fas fa-chart-line"></i>
                         <small class="">Reports</small>
                         <span class="app-shortcuts__helper bg-blue-grey"></span>
                     </a>
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-view-headline"></i>
+                        <i class="fas fa-newspaper"></i>
                         <small class="">News</small>
                         <span class="app-shortcuts__helper bg-orange"></span>
                     </a>
                     <a class="col-4 app-shortcuts__item" href="">
-                        <i class="zmdi zmdi-image"></i>
+                        <i class="fas fa-images"></i>
                         <small class="">Gallery</small>
                         <span class="app-shortcuts__helper bg-light-green"></span>
                     </a>

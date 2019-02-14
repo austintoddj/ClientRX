@@ -93,8 +93,8 @@
 
   & > h1 {
     line-height: 100%;
-    font-size: 1.3rem;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: bolder;
     margin: 0;
 
     & > a {
@@ -259,6 +259,7 @@
 }
 
 .search__text {
+  font-weight: $font-weight-base;
   border: 0;
   border-radius: $border-radius;
   height: 2.9rem;
@@ -297,7 +298,7 @@
     line-height: 2.9rem;
 
     &:before {
-      content: '\f301';
+      content: '\f061';
     }
 
     &:hover {
@@ -363,6 +364,7 @@
     font-size: 0.95rem;
     color: $text-muted;
     transition: color 500ms;
+    font-weight: $font-weight-base;
   }
 }
 
