@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth']], function () {
     // Dashboard routes...
@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth']], function () {
     // User routes...
     Route::prefix('user')->group(function () {
         Route::get('{id}', 'UserController@show')->name('user.show');
-        Route::post('user', 'ProfileController@update')->name('user.update');
+        Route::post('user', 'UserController@update')->name('user.update');
     });
 
     // Client routes...

@@ -11,7 +11,7 @@
         <div class="content__inner content__inner--sm">
             <header class="content__title">
                 <h1>{{ $data['user']->fullName }}</h1>
-                <small>Web/UI Developer, Edinburgh, Scotland</small>
+                <small>Joined in {{ $data['user']->created_at->format('F Y') }}</small>
 
                 <div class="actions">
                     <a href="" class="actions__item fas fa-chart-line"></a>

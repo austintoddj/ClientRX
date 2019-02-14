@@ -16436,7 +16436,7 @@ a.text-dark:focus {
 
 .card-title {
   font-size: 1.25rem;
-  font-weight: normal;
+  font-weight: 600;
   line-height: 140%;
   margin-top: -0.35rem;
 }
@@ -16448,7 +16448,7 @@ a.text-dark:focus {
 .card-subtitle {
   color: #9c9c9c;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 600;
   margin-top: -1.5rem;
   line-height: 1.5;
 }
@@ -18968,7 +18968,7 @@ textarea {
 
 .navigation__sub .navigation__active:before {
   font-family: "Font Awesome 5 Free";
-  content: "\F26D";
+  content: "\F111";
   font-size: 6px;
   position: absolute;
   left: 1rem;

@@ -2,12 +2,15 @@
 
 namespace App;
 
+use App\Helpers\User\Roles;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable, SoftDeletes;
 
@@ -116,5 +119,16 @@ class User extends Authenticatable
     public function getFullAddressAttribute($value): string
     {
         return sprintf('%s, %s %s', $this->address->address, $this->address->state, $this->address->zip);
+    }
+
+    /**
+     * Scope a query to only include clients.
+     *
+     * @param $query
+     * @return Builder
+     */
+    public function scopeClients($query): Builder
+    {
+        return $query->where('role', Roles::CLIENT);
     }
 }

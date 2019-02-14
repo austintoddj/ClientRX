@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'id' => Str::uuid(),
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            'email' => EmailAddress::isValid($data['email']) ?? $data['email'],
+            'email' => EmailAddress::isValid($data['email']) ? $data['email'] : null,
             'password' => Hash::make($data['password']),
         ]);
     }

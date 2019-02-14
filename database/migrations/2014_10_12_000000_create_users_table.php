@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\User\Roles;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -20,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger('role')->default(1);
+            $table->tinyInteger('role')->default(Roles::CLIENT);
             $table->text('bio')->nullable();
             $table->json('social')->nullable();
             $table->rememberToken();

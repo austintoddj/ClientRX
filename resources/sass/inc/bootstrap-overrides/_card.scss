@@ -19,7 +19,7 @@
 
 .card-title {
   font-size: 1.25rem;
-  font-weight: normal;
+  font-weight: $font-weight-base;
   line-height: 140%;
   margin-top: -0.35rem;
 
@@ -31,7 +31,7 @@
 .card-subtitle {
   color: $text-muted;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: $font-weight-base;
   margin-top: -1.5rem;
   line-height: 1.5;
 

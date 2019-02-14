@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Signup')
+
 @section('content')
     <div class="login__block active" id="l-register">
         <div class="login__block__header palette-Blue bg">

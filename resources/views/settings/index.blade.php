@@ -11,6 +11,7 @@
         <div class="content__inner content__inner--sm">
             <header class="content__title">
                 <h1>Settings</h1>
+                <small>Last edited on {{ $data['user']->updated_at->format('F d, Y') }}</small>
 
                 <div class="actions">
                     <a href="" class="actions__item fas fa-chart-line"></a>
