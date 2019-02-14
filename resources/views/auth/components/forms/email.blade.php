@@ -5,7 +5,7 @@
         @if (session('status'))
             <p class="mt-4 text-success">{{ session('status') }}</p>
         @else
-            <p class="mt-4">Just need to confirm your email to send you instructions to reset your password.</p>
+            <p class="mt-4">Enter your email and we'll send you a link to reset your password.</p>
         @endif
 
         <div class="form-group form-group--float form-group--centered">

@@ -6,7 +6,7 @@
     <div class="login__block active" id="l-forget-password">
         <div class="login__block__header palette-Purple bg">
             <i class="fas fa-user-circle"></i>
-            Forgot password?
+            Reset your password
 
             <div class="actions actions--inverse login__block__actions">
                 <div class="dropdown">
