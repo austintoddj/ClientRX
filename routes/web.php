@@ -26,6 +26,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('user', 'ProfileController@update')->name('user.update');
     });
 
+    // Client routes...
+    Route::prefix('client')->group(function () {
+        Route::get('', 'ClientController@index')->name('client.index');
+        Route::get('create', 'ClientController@create')->name('client.create');
+    });
+
     // Settings routes...
     Route::prefix('settings')->group(function () {
         Route::get('/', 'SettingsController@index')->name('settings.index');

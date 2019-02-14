@@ -29,21 +29,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-body__title mb-4">Bio</h4>
-
-                    <p>{{ $data['user']->bio }}</p>
-
-                    <br>
-
-                    <h4 class="card-body__title mb-4">Contact Information</h4>
-
-                    <ul class="icon-list">
-                        <li><i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
-                        <li><i class="fab fa-facebook-f"></i>robertbosborne</li>
-                        <li><i class="fab fa-twitter"></i>@robertbosborne</li>
-                        <li><i class="fas fa-map-pin"></i>{{ $data['user']->fullAddress }}</li>
-                    </ul>
+                    Settings form
                 </div>
             </div>
         </div>

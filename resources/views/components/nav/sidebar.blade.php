@@ -27,7 +27,13 @@
 
         <ul class="navigation">
             <li class="{{ Route::is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Home</a></li>
-            <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-users"></i> Clients</a></li>
+            <li class="navigation__sub {{ Route::is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
+                <a href=""><i class="fas fa-users"></i> Clients</a>
+                <ul>
+                    <li><a href="#" class="{{ Route::is('client.index') ? 'navigation__active' : '' }}">All Clients</a></li>
+                    <li><a href="#" class="{{ Route::is('client.create') ? 'navigation__active' : '' }}">Add New</a></li>
+                </ul>
+            </li>
             <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
             <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-utensils"></i> Nutrition</a></li>
             <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
