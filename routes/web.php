@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     // Dashboard routes...
     Route::get('/', 'DashboardController')->name('dashboard');
 

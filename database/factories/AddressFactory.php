@@ -1,5 +1,6 @@
 <?php
 
+use App\Address;
 use Faker\Generator as Faker;
 
 /*
@@ -13,12 +14,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Address::class, function (Faker $faker) {
+$factory->define(Address::class, function (Faker $faker) {
     return [
         'user_id' => $faker->uuid,
         'address' => $faker->streetAddress,
-        'city' => $faker->city,
-        'state' => $faker->stateAbbr,
-        'zip' => $faker->postcode,
+        'city'    => $faker->city,
+        'state'   => $faker->stateAbbr,
+        'zip'     => $faker->postcode,
     ];
 });

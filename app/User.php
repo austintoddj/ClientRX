@@ -6,11 +6,10 @@ use App\Helpers\User\Roles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use Notifiable, SoftDeletes;
 
@@ -56,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'id', 'first_name', 'last_name', 'email', 'email_verified_at',
-        'password', 'role', 'bio', 'social',
+        'password', 'role_id', 'dob', 'gender', 'bio', 'social',
     ];
 
     /**
@@ -129,6 +128,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function scopeClients($query): Builder
     {
-        return $query->where('role', Roles::CLIENT);
+        return $query->where('role_id', Roles::CLIENT);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Str;
+use App\Helpers\User\Gender;
 use Faker\Generator as Faker;
 
 /*
@@ -14,15 +16,17 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
-        'id' => $faker->uuid,
-        'first_name' => $faker->firstName,
-        'last_name' => $faker->lastName,
-        'email' => $faker->unique()->safeEmail,
+        'id'                => $faker->uuid,
+        'first_name'        => $faker->firstName,
+        'last_name'         => $faker->lastName,
+        'email'             => $faker->unique()->safeEmail,
         'email_verified_at' => null,
-        'password' => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
-        'bio' => $faker->realText(),
-        'remember_token' => Str::random(10),
+        'password'          => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
+        'dob'               => $faker->date(),
+        'gender'            => collect([Gender::MALE, Gender::FEMALE, Gender::OTHER])->random(),
+        'bio'               => $faker->realText(),
+        'remember_token'    => Str::random(10),
     ];
 });

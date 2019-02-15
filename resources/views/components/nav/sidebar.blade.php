@@ -26,17 +26,17 @@
         </div>
 
         <ul class="navigation">
-            <li class="{{ Route::is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Home</a></li>
-            <li class="navigation__sub {{ Route::is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
+            <li class="{{ app('router')->is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li class="navigation__sub {{ app('router')->is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
                 <a href=""><i class="fas fa-users"></i> Clients</a>
                 <ul>
-                    <li class="{{ Route::is('client.index') ? 'navigation__active' : '' }}"><a href="{{ route('client.index') }}">All Clients</a></li>
-                    <li class="{{ Route::is('client.create') ? 'navigation__active' : '' }}"><a href="{{ route('client.create') }}">Add New</a></li>
+                    <li class="{{ app('router')->is('client.index') ? 'navigation__active' : '' }}"><a href="{{ route('client.index') }}">All Clients</a></li>
+                    <li class="{{ app('router')->is('client.create') ? 'navigation__active' : '' }}"><a href="{{ route('client.create') }}">Add New</a></li>
                 </ul>
             </li>
-            <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
-            <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-utensils"></i> Nutrition</a></li>
-            <li class="{{ Route::is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+            <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
+            <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-utensils"></i> Nutrition</a></li>
+            <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
         </ul>
     </div>
 </aside>
