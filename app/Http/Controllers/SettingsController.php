@@ -23,6 +23,6 @@ class SettingsController extends Controller
 
     public function update(Request $request)
     {
-        dd($request);
+        dd($request->all());
     }
 }

@@ -16,10 +16,10 @@ $(document).ready(function () {
 
         // Add custom buttons
         var dataTableButtons =  '<div class="dataTables_buttons hidden-sm-down actions">' +
-                                    '<span class="actions__item zmdi zmdi-print" data-table-action="print" />' +
-                                    '<span class="actions__item zmdi zmdi-fullscreen" data-table-action="fullscreen" />' +
+                                    '<span class="actions__item fas fa-print" data-table-action="print" />' +
+                                    '<span class="actions__item fas fa-expand" data-table-action="fullscreen" />' +
                                     '<div class="dropdown actions__item">' +
-                                        '<i data-toggle="dropdown" class="zmdi zmdi-download" />' +
+                                        '<i data-toggle="dropdown" class="fas fa-download" />' +
                                         '<ul class="dropdown-menu dropdown-menu-right">' +
                                             '<a href="" class="dropdown-item" data-table-action="excel">Excel (.xlsx)</a>' +
                                             '<a href="" class="dropdown-item" data-table-action="csv">CSV (.csv)</a>' +
@@ -33,7 +33,7 @@ $(document).ready(function () {
             responsive: true,
             lengthMenu: [[15, 30, 45, -1], ['15 Rows', '30 Rows', '45 Rows', 'Everything']],
             language: {
-                searchPlaceholder: "Search for records..."
+                searchPlaceholder: "Search for clients..."
             },
             "sDom": '<"dataTables__top"lfB>rt<"dataTables__bottom"ip><"clear">',
             buttons: [
@@ -89,7 +89,7 @@ $(document).ready(function () {
                     $('body').removeClass('data-table-toggled');
                 }
                 else {
-                    parentCard.addClass('card--fullscreen')
+                    parentCard.addClass('card--fullscreen');
                     $('body').addClass('data-table-toggled');
                 }
             }
@@ -145,8 +145,8 @@ $(document).ready(function () {
     if($('.datetime-picker')[0]) {
         $('.datetime-picker').flatpickr({
             enableTime: true,
-            nextArrow: '<i class="zmdi zmdi-long-arrow-right" />',
-            prevArrow: '<i class="zmdi zmdi-long-arrow-left" />'
+            nextArrow: '<i class="fas fa-arrow-right" />',
+            prevArrow: '<i class="fas fa-arrow-left" />'
         });
     }
 
@@ -154,8 +154,8 @@ $(document).ready(function () {
     if($('.date-picker')[0]) {
         $('.date-picker').flatpickr({
             enableTime: false,
-            nextArrow: '<i class="zmdi zmdi-long-arrow-right" />',
-            prevArrow: '<i class="zmdi zmdi-long-arrow-left" />'
+            nextArrow: '<i class="fas fa-arrow-right" />',
+            prevArrow: '<i class="fas fa-arrow-left" />'
         });
     }
 
@@ -290,8 +290,8 @@ $(document).ready(function () {
             contentHeight: 'auto',
             theme: false,
             buttonIcons: {
-                prev: ' zmdi zmdi-long-arrow-left',
-                next: ' zmdi zmdi-long-arrow-right'
+                prev: ' fas fa-arrow-left',
+                next: ' fas fa-arrow-right'
             },
             header: {
                 right: 'next',
@@ -449,8 +449,8 @@ $(document).ready(function () {
     if($('.treeview')[0]) {
         $('.treeview').tree({
             data: treeviewData,
-            closedIcon: $('<i class="zmdi zmdi-plus"></i>'),
-            openedIcon: $('<i class="zmdi zmdi-minus"></i>')
+            closedIcon: $('<i class="fas fa-plus"></i>'),
+            openedIcon: $('<i class="fas fa-minus"></i>')
         });
     }
 
@@ -458,8 +458,8 @@ $(document).ready(function () {
         $('.treeview-expanded').tree({
             data: treeviewSimpleData,
             autoOpen: true,
-            closedIcon: $('<i class="zmdi zmdi-plus"></i>'),
-            openedIcon: $('<i class="zmdi zmdi-minus"></i>')
+            closedIcon: $('<i class="fas fa-plus"></i>'),
+            openedIcon: $('<i class="fas fa-minus"></i>')
         });
     }
 
@@ -468,8 +468,8 @@ $(document).ready(function () {
             data: treeviewSimpleData,
             dragAndDrop: true,
             autoOpen: true,
-            closedIcon: $('<i class="zmdi zmdi-plus"></i>'),
-            openedIcon: $('<i class="zmdi zmdi-minus"></i>')
+            closedIcon: $('<i class="fas fa-plus"></i>'),
+            openedIcon: $('<i class="fas fa-minus"></i>')
         });
     }
 
@@ -478,8 +478,8 @@ $(document).ready(function () {
             data: treeviewSimpleData,
             dragAndDrop: true,
             autoOpen: true,
-            closedIcon: $('<i class="zmdi zmdi-plus"></i>'),
-            openedIcon: $('<i class="zmdi zmdi-minus"></i>')
+            closedIcon: $('<i class="fas fa-plus"></i>'),
+            openedIcon: $('<i class="fas fa-minus"></i>')
         });
     }
 
@@ -488,8 +488,8 @@ $(document).ready(function () {
             data: treeviewEscapeData,
             autoEscape: false,
             autoOpen: true,
-            closedIcon: $('<i class="zmdi zmdi-plus"></i>'),
-            openedIcon: $('<i class="zmdi zmdi-minus"></i>')
+            closedIcon: $('<i class="fas fa-plus"></i>'),
+            openedIcon: $('<i class="fas fa-minus"></i>')
         });
     }
 

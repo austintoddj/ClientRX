@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'email'             => $faker->unique()->safeEmail,
         'password'          => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
         'dob'               => $faker->date(),
-        'gender'            => collect([Gender::MALE, Gender::FEMALE, Gender::OTHER])->random(),
+        'gender'            => collect(Gender::GENDERS)->random(),
         'bio'               => $faker->realText(),
         'remember_token'    => Str::random(10),
     ];

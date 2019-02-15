@@ -15,6 +15,9 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Select2
+@import "~select2/src/scss/core";
+
 // Bootstrap overrides
 @import "inc/bootstrap-overrides/dropdown";
 @import "inc/bootstrap-overrides/progress";

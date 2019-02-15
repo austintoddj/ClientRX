@@ -21,8 +21,8 @@
     </div>
 
     <p class="text-center pt-5 font-weight-bold">
-        <span class="font-italic text-danger">Remove for production:</span><br>
-        {{ App\User::all()->random()->email }}
+        <span class="font-italic text-danger"><i class="fas fa-exclamation-circle"></i> For testing purposes only</span><br><br>
+        <code>{{ App\User::all()->random()->email }}</code>
     </p>
 
     @include('auth.components.forms.login')

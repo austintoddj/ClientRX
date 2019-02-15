@@ -8,6 +8,7 @@
       & > tr {
         & > th {
           cursor: pointer;
+          font-weight: $font-weight-base;
 
           &:hover {
             background-color: lighten($gray-100, 2%);
@@ -28,13 +29,13 @@
 
           &.sorting_asc {
             &:after {
-              content: '\f1cd';
+              content: '\f0dd';
             }
           }
 
           &.sorting_desc {
             &:after {
-              content: '\f1ce';
+              content: '\f0de';
             }
           }
         }
@@ -52,8 +53,8 @@
     font-family: $font-family-icon;
     position: absolute;
     left: 1px;
-    bottom: 5px;
-    font-size: 1.2rem;
+    bottom: 9px;
+    font-size: .9rem;
     color: $headings-color;
   }
 
@@ -63,6 +64,7 @@
 
     select,
     input[type=search] {
+      font-weight: $font-weight-base;
       padding-left: 25px;
       font-size: $font-size-base;
       background: none;
@@ -89,7 +91,7 @@
   }
 
   &:after {
-    content: '\f197';
+    content: '\f039';
   }
 
   select {
@@ -101,7 +103,7 @@
   overflow: hidden;
 
   &:after {
-    content: '\f1c3';
+    content: '\f002';
   }
 
   & > label {
@@ -137,6 +139,7 @@
 
 .dataTables_paginate {
   text-align: center;
+  padding-bottom: 1em;
 }
 
 .paginate_button {
@@ -191,13 +194,13 @@
 
   &.previous {
     &:before {
-      content: '\F2FF';
+      content: '\F060';
     }
   }
 
   &.next {
     &:before {
-      content: '\F301';
+      content: '\F061';
     }
   }
 
@@ -235,7 +238,7 @@
   .dataTables_buttons {
     [data-table-action="fullscreen"] {
       &:before {
-        content: '\f16c';
+        content: '\f78c';
       }
     }
   }

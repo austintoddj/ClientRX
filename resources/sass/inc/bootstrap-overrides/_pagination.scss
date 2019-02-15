@@ -15,7 +15,7 @@
   transition: background-color 300ms, color 300ms;
   margin: 0 1px;
 
-  & > .zmdi {
+  & > .fas {
     font-size: 1.5rem;
   }
 
@@ -39,7 +39,7 @@
 }
 
 .pagination-prev .page-link:before {
-    content: '\f2ff';
+    content: '\f061';
 }
 
 .pagination-next .page-link:before {
@@ -49,7 +49,7 @@
 .pagination-first,
 .pagination-last {
   .page-link:before {
-    content: '\f302';
+    content: '\f060';
   }
 }
 
