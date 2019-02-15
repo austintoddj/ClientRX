@@ -16531,6 +16531,7 @@ a.text-dark:focus {
 
 .btn {
   transition: box-shadow 300ms, background-color 300ms, border-color 300ms;
+  font-weight: 600;
 }
 
 .btn:not([class*=btn-outline-]) {
@@ -22596,54 +22597,6 @@ span.flatpickr-weekday {
   [data-calendar-month] {
     transition: none;
   }
-}
-
-[data-calendar-month="0"] {
-  background-image: url(../images/january.jpg?e361caea538961a681889517108faddc);
-}
-
-[data-calendar-month="1"] {
-  background-image: url(../images/february.jpg?435af0a00650acb60bce40f39fc88f02);
-}
-
-[data-calendar-month="2"] {
-  background-image: url(../images/march.jpg?44d5f63c8ca46484d8396f97bd2cc24a);
-}
-
-[data-calendar-month="3"] {
-  background-image: url(../images/april.jpg?5e83291b8bd92296c7adaedd508dc5f2);
-}
-
-[data-calendar-month="4"] {
-  background-image: url(../images/may.jpg?a223e1c9be8507e44978dd044cf665a1);
-}
-
-[data-calendar-month="5"] {
-  background-image: url(../images/june.jpg?af195e378074b007f90eb3857d5c48d4);
-}
-
-[data-calendar-month="6"] {
-  background-image: url(../images/july.jpg?d585fc9c668615cd7a132e2abccefc90);
-}
-
-[data-calendar-month="7"] {
-  background-image: url(../images/august.jpg?681392f06cb31dc1a36067b5d10c9d8f);
-}
-
-[data-calendar-month="8"] {
-  background-image: url(../images/september.jpg?88aa5bc0c363b14930ed84dff22b7717);
-}
-
-[data-calendar-month="9"] {
-  background-image: url(../images/october.jpg?b741e7c405ca565163d8a2bd449d3f5e);
-}
-
-[data-calendar-month="10"] {
-  background-image: url(../images/november.jpg?19a8e846b91a2bb401a4fc3a30f5d4cf);
-}
-
-[data-calendar-month="11"] {
-  background-image: url(../images/december.jpg?0f0fdd208b1049790989a1649fb19032);
 }
 
 .swal2-modal {

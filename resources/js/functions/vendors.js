@@ -1,5 +1,7 @@
 'use strict';
 
+const autosize = require('autosize');
+
 // Disable Dropzone auto discover
 if($('#dropzone-upload')[0]) {
     Dropzone.autoDiscover = false;

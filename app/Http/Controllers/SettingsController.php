@@ -20,4 +20,9 @@ class SettingsController extends Controller
 
         return view('settings.index', compact('data'));
     }
+
+    public function update(Request $request)
+    {
+        dd($request);
+    }
 }

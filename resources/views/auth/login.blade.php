@@ -20,6 +20,11 @@
         </div>
     </div>
 
+    <p class="text-center pt-5 font-weight-bold">
+        <span class="font-italic text-danger">Remove for production:</span><br>
+        {{ App\User::all()->random()->email }}
+    </p>
+
     @include('auth.components.forms.login')
 </div>
 @endsection

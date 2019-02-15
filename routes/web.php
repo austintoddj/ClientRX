@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth']], function () {
     // Dashboard routes...
     Route::get('/', 'DashboardController')->name('dashboard');
 
     // User routes...
     Route::prefix('user')->group(function () {
         Route::get('{id}', 'UserController@show')->name('user.show');
-        Route::post('user', 'UserController@update')->name('user.update');
+        Route::post('/', 'UserController@update')->name('user.update');
     });
 
     // Client routes...
@@ -35,5 +35,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Settings routes...
     Route::prefix('settings')->group(function () {
         Route::get('/', 'SettingsController@index')->name('settings.index');
+        Route::post('/', 'SettingsController@update')->name('settings.update');
     });
 });
