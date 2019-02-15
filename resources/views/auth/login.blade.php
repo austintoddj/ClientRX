@@ -20,9 +20,9 @@
         </div>
     </div>
 
-    <p class="text-center pt-5 font-weight-bold">
-        <span class="font-italic text-danger"><i class="fas fa-exclamation-circle"></i> For testing purposes only</span><br><br>
-        <code>{{ App\User::all()->random()->email }}</code>
+    <p class="text-center pt-3 font-weight-bold">
+        <span class="font-italic text-danger"><i class="fas fa-exclamation-circle"></i> For testing purposes only</span><br>
+        <code style="cursor: pointer;" class="text-muted">{{ App\User::all()->random()->email }}</code>
     </p>
 
     @include('auth.components.forms.login')

@@ -26,7 +26,8 @@
         </div>
 
         <ul class="navigation">
-            <li class="{{ app('router')->is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li class="{{ app('router')->is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-newspaper"></i> News Feed</a></li>
             <li class="navigation__sub {{ app('router')->is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
                 <a href=""><i class="fas fa-users"></i> Clients</a>
                 <ul>
@@ -36,6 +37,8 @@
             </li>
             <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-dumbbell"></i> Workouts</a></li>
             <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-utensils"></i> Nutrition</a></li>
+            <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Shop</a></li>
             <li class="{{ app('router')->is('') ? 'navigation__active' : '' }}"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
         </ul>
     </div>
