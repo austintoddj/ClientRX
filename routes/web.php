@@ -14,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     // Dashboard routes...
-    Route::get('/', 'DashboardController')->name('dashboard');
+    Route::get('dashboard', 'DashboardController')->name('dashboard');
 
     // User routes...
     Route::prefix('user')->group(function () {
