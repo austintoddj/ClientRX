@@ -37,14 +37,27 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('settings.update') }}" method="POST">
+
+                    <div class="container d-flex justify-content-center">
+                        <div class="btn-demo notifications-demo mt-3">
+                            <a href="" class="btn btn-light" data-type="inverse">Default</a>
+                        </div>
+                    </div>
+
+
+                    <form method="POST" action="{{ route('settings.update') }}">
                         @csrf
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" name="first_name" class="form-control" placeholder="eg: Samuel" value="{{ $data['user']->first_name }}">
+                                    <input type="text" name="first_name" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" placeholder="eg: Samuel" value="{{ $data['user']->first_name }}" required>
+                                    @if ($errors->has('first_name'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('first_name') }}</strong>
+                                        </div>
+                                    @endif
                                     <i class="form-group__bar"></i>
                                 </div>
                             </div>
@@ -52,7 +65,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" name="last_name" class="form-control" placeholder="eg: Nicholas" value="{{ $data['user']->last_name }}">
+                                    <input type="text" name="last_name" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" placeholder="eg: Nicholas" value="{{ $data['user']->last_name }}" required>
+                                    @if ($errors->has('last_name'))
+                                        <div class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('last_name') }}</strong>
+                                        </div>
+                                    @endif
                                     <i class="form-group__bar"></i>
                                 </div>
                             </div>
@@ -60,7 +78,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input type="text" name="email" class="form-control" placeholder="eg: name@example.com" value="{{ $data['user']->email }}">
+                                    <input type="text" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="eg: name@example.com" value="{{ $data['user']->email }}" required>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
                                     <i class="form-group__bar"></i>
                                 </div>
                             </div>

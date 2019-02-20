@@ -17967,11 +17967,11 @@ select.form-control {
 }
 
 .alert--notify:not(.alert-info):not(.alert-success):not(.alert-warning):not(.alert-danger) {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .alert--notify:not(.alert-info):not(.alert-success):not(.alert-warning):not(.alert-danger) .alert--notify__close {
-  color: #FFEB3B;
+  color: #ff6b68;
 }
 
 .alert--notify:not(.alert-info):not(.alert-success):not(.alert-warning):not(.alert-danger) .alert--notify__close:hover {

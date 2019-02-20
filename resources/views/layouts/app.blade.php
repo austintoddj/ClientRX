@@ -10,7 +10,7 @@
         <title>{{ config('app.name') }} ― @yield('title')</title>
 
         <!-- Application scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}"></script>
 
         <!-- Animate style sheets -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
@@ -30,5 +30,8 @@
                 @yield('content')
             </div>
         @endauth
+
+        <!-- Additional scripts -->
+        @stack('scripts')
     </body>
 </html>

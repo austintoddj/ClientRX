@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SettingsController extends Controller
 {
@@ -21,8 +22,25 @@ class SettingsController extends Controller
         return view('settings.index', compact('data'));
     }
 
+    /**
+     * Update a users settings.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(Request $request)
     {
-        dd($request->all());
+        validator($request->all(), [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email|max:255|'.Rule::unique('users', 'email')->ignore(request('email')),
+        ])->validate();
+
+        $user = request()->user();
+
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect(route('settings.index'));
     }
 }

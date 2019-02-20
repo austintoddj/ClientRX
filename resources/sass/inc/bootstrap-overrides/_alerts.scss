@@ -35,9 +35,9 @@
   color: rgba($white, 0.85);
 
   &:not(.alert-info):not(.alert-success):not(.alert-warning):not(.alert-danger) {
-    background-color: rgba($black, 0.95);
+    background-color: rgba($black, 0.85);
     .alert--notify__close {
-      color: $yellow;
+      color: $red;
 
       &:hover {
         opacity: 0.8;
@@ -45,7 +45,6 @@
     }
   }
 }
-
 
 .alert--notify__close {
   background-color: transparent;
