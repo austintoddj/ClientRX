@@ -121,11 +121,11 @@
 
     &:before {
       font-family: $font-family-icon;
-      content: '\f26b';
+      content: '\f00c';
       position: absolute;
       top: 0.45rem;
       right: 1.5rem;
-      font-size: 1.3rem;
+      font-size: 1rem;
       color: $dropdown-link-hover-color;
     }
   }
