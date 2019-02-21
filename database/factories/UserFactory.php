@@ -17,15 +17,22 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    $social_meta = [
+        'twitter'   => $faker->userName,
+        'facebook'  => $faker->userName,
+        'instagram' => $faker->userName,
+    ];
+
     return [
-        'id'                => $faker->uuid,
-        'first_name'        => $faker->firstName,
-        'last_name'         => $faker->lastName,
-        'email'             => $faker->unique()->safeEmail,
-        'password'          => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
-        'dob'               => $faker->date(),
-        'gender'            => collect(Gender::GENDERS)->random(),
-        'bio'               => $faker->realText(),
-        'remember_token'    => Str::random(10),
+        'id'             => $faker->uuid,
+        'first_name'     => $faker->firstName,
+        'last_name'      => $faker->lastName,
+        'email'          => $faker->unique()->safeEmail,
+        'password'       => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
+        'dob'            => $faker->date(),
+        'gender'         => collect(Gender::GENDERS)->random(),
+        'bio'            => $faker->realText(),
+        'social'         => $social_meta,
+        'remember_token' => Str::random(10),
     ];
 });

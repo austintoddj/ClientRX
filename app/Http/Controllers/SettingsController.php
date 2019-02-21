@@ -10,7 +10,7 @@ class SettingsController extends Controller
     /**
      * Show the user settings page.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -30,13 +30,12 @@ class SettingsController extends Controller
      */
     public function update(Request $request)
     {
+        $user = request()->user();
         validator($request->all(), [
             'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email|max:255|'.Rule::unique('users', 'email')->ignore(request('email')),
+            'last_name'  => 'required',
+            'email'      => 'required|email|max:255|' . Rule::unique('users', 'email')->ignore($user->id),
         ])->validate();
-
-        $user = request()->user();
 
         $user->fill($request->all());
         $user->save();

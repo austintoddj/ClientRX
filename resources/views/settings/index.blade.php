@@ -37,14 +37,6 @@
                 </div>
 
                 <div class="card-body">
-
-                    <div class="container d-flex justify-content-center">
-                        <div class="btn-demo notifications-demo mt-3">
-                            <a href="" class="btn btn-light" data-type="inverse">Default</a>
-                        </div>
-                    </div>
-
-
                     <form method="POST" action="{{ route('settings.update') }}">
                         @csrf
 

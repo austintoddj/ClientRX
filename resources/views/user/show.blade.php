@@ -32,8 +32,6 @@
                 <div class="profile__img">
                     <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
                          alt="{{ $data['user']->name }}">
-
-                    <a href="" class="fas fa-camera profile__img__edit"></a>
                 </div>
 
                 <div class="profile__info">
