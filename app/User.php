@@ -69,6 +69,15 @@ class User extends Authenticatable
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'dob'
+    ];
+
+    /**
      * The attributes that should be cast to native types.
      *
      * @var array

@@ -125,8 +125,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Date of Birth</label>
-                                    <input type="text" name="dob" class="form-control input-mask" data-mask="00/00/0000" placeholder="eg: 11/10/1775" value="{{ $data['user']->address->dob }}">
+                                    <label>Date of Birth (y-m-d)</label>
+                                    <input type="text" name="dob" id="dob" class="form-control input-mask" data-mask="0000-00-00" placeholder="eg: 1775/11/10" value="{{ $data['user']->dob }}">
                                     <i class="form-group__bar"></i>
                                 </div>
                             </div>
