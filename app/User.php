@@ -74,7 +74,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = [
-        'dob'
+        'dob',
     ];
 
     /**
