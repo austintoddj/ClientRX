@@ -12,7 +12,8 @@
 
 .btn {
   transition: box-shadow 300ms, background-color 300ms, border-color 300ms;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
 
   &:not([class*="btn-outline-"]) {
     border-color: transparent !important;

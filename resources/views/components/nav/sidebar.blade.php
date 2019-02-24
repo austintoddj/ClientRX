@@ -2,7 +2,12 @@
     <div class="scrollbar-inner">
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
-                <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=200') }}"
+                <img
+                    @isset($data['user']->avatar)
+                        src="{{ $data['user']->avatar }}"
+                    @else
+                        src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
+                    @endisset
                      class="user__img"
                      alt="{{ $data['user']->fullName }}">
                 <div>

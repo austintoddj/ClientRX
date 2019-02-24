@@ -41,4 +41,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', 'SettingsController@index')->name('settings.index');
         Route::post('/', 'SettingsController@update')->name('settings.update');
     });
+
+    Route::prefix('media')->group(function () {
+        Route::post('upload', 'MediaController@store')->name('media.store');
+    });
 });

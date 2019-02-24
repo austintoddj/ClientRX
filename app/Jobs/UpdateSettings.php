@@ -71,6 +71,7 @@ class UpdateSettings implements ShouldQueue
             'gender'     => $this->data['gender'],
             'bio'        => $this->data['bio'],
             'social'     => $this->collectSocialLinks($this->data['social']) ?? [],
+            'avatar'     => $this->data['avatar'],
         ]);
 
         $this->user->phoneNumber()->update([

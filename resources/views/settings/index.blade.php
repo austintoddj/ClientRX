@@ -30,15 +30,22 @@
 
             <div class="card new-contact">
                 <div class="new-contact__header">
-                    <a href="" class="fas fa-camera new-contact__upload"></a>
-
-                    <img src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
-                         class="new-contact__img" alt="{{ $data['user']->name }}">
+                    <a href="#" class="fas fa-camera new-contact__upload" data-target="#avatar" data-toggle="modal"></a>
+                    <img
+                        @isset($data['user']->avatar)
+                            src="{{ $data['user']->avatar }}"
+                        @else
+                            src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
+                        @endisset
+                         class="new-contact__img"
+                         alt="{{ $data['user']->name }}">
                 </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('settings.update') }}">
                         @csrf
+
+                        @include('components.modals.avatar')
 
                         <div class="tab-container">
                             <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
@@ -251,8 +258,8 @@
                         <div class="clearfix"></div>
 
                         <div class="mt-5 text-center">
-                            <a href="{{ route('dashboard') }}" class="btn btn-link">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Update Settings</button>
+                            <a href="{{ route('dashboard') }}" class="btn btn-link text-muted">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>
