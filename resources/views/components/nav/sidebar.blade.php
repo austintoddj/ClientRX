@@ -14,6 +14,9 @@
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ route('user.show', $data['user']->id) }}">View profile</a>
                 <a class="dropdown-item" href="{{ route('settings.index') }}">Settings</a>
+                <a class="dropdown-item" href="#">Privacy and security</a>
+
+                <div class="dropdown-divider"></div>
 
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">

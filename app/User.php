@@ -5,13 +5,14 @@ namespace App;
 use App\Helpers\User\Roles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, SoftDeletes;
+    use LogsActivity, Notifiable, SoftDeletes;
 
     /**
      * The table associated with the model.
@@ -49,14 +50,11 @@ class User extends Authenticatable
     protected $guarded = [];
 
     /**
-     * The attributes that are mass assignable.
+     * Log changes to all attributes on the model.
      *
-     * @var array
+     * @var bool
      */
-    protected $fillable = [
-        'id', 'first_name', 'last_name', 'email', 'password',
-        'role_id', 'dob', 'gender', 'bio', 'social',
-    ];
+    protected static $logUnguarded = true;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -66,15 +64,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-    ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = [
-        'dob'
     ];
 
     /**

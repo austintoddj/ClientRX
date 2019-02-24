@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use App\Jobs\UpdateSettings;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -38,8 +38,7 @@ class SettingsController extends Controller
             'email'      => 'required|email|max:255|'.Rule::unique('users', 'email')->ignore($user->id),
         ])->validate();
 
-        $user->fill($request->all());
-        $user->save();
+        dispatch(new UpdateSettings($user, $request->all()));
 
         return redirect(route('settings.index'));
     }
