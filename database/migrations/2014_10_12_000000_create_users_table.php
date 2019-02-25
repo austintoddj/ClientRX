@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->text('bio')->nullable();
             $table->json('social')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('profile_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

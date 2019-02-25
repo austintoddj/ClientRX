@@ -64,14 +64,14 @@ class UpdateSettings implements ShouldQueue
     public function handle()
     {
         $this->user->update([
-            'first_name' => $this->data['first_name'],
-            'last_name'  => $this->data['last_name'],
-            'email'      => $this->data['email'],
-            'dob'        => Carbon::parse($this->data['dob'])->toDateString(),
-            'gender'     => $this->data['gender'],
-            'bio'        => $this->data['bio'],
-            'social'     => $this->collectSocialLinks($this->data['social']) ?? [],
-            'avatar'     => $this->data['avatar'],
+            'first_name'    => $this->data['first_name'],
+            'last_name'     => $this->data['last_name'],
+            'email'         => $this->data['email'],
+            'dob'           => Carbon::parse($this->data['dob'])->toDateString(),
+            'gender'        => $this->data['gender'],
+            'bio'           => $this->data['bio'],
+            'social'        => $this->collectSocialLinks($this->data['social']) ?? [],
+            'profile_image' => $this->data['profile_image'] ?? null,
         ]);
 
         $this->user->phoneNumber()->update([

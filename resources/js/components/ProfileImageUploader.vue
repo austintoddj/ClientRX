@@ -45,10 +45,10 @@
 <template>
     <div>
         <div v-if="imageUrl" id="current-image">
-            <img :src="imageUrl" class="w-100 mb-5">
+            <img :src="imageUrl" class="w-100 mb-2">
         </div>
 
-        <input hidden type="hidden" name="avatar" v-model="imageUrl">
+        <input hidden type="hidden" name="profile_image" v-model="imageUrl">
 
         <image-picker
                 @changed="updateImage"

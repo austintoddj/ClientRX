@@ -3,8 +3,8 @@
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
                 <img
-                    @isset($data['user']->avatar)
-                        src="{{ $data['user']->avatar }}"
+                    @isset($data['user']->profile_image)
+                        src="{{ $data['user']->profile_image }}"
                     @else
                         src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
                     @endisset

@@ -32,8 +32,8 @@
                 <div class="new-contact__header">
                     <a href="#" class="fas fa-camera new-contact__upload" data-target="#avatar" data-toggle="modal"></a>
                     <img
-                        @isset($data['user']->avatar)
-                            src="{{ $data['user']->avatar }}"
+                        @isset($data['user']->profile_image)
+                            src="{{ $data['user']->profile_image }}"
                         @else
                             src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
                         @endisset
@@ -45,7 +45,7 @@
                     <form method="POST" action="{{ route('settings.update') }}">
                         @csrf
 
-                        @include('components.modals.avatar')
+                        @include('components.modals.profile-image')
 
                         <div class="tab-container">
                             <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
