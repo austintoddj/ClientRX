@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +20,29 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    // Dashboard routes...
+    Route::get('dashboard', 'DashboardController')->name('dashboard');
+
+    // User routes...
+    Route::prefix('user')->group(function () {
+        Route::get('{id}', 'UserController@show')->name('user.show');
+        Route::post('/', 'UserController@update')->name('user.update');
+    });
+
+    // Client routes...
+    Route::prefix('client')->group(function () {
+        Route::get('', 'ClientController@index')->name('client.index');
+        Route::get('create', 'ClientController@create')->name('client.create');
+    });
+
+    // Settings routes...
+    Route::prefix('settings')->group(function () {
+        Route::get('/', 'SettingsController@index')->name('settings.index');
+        Route::post('/', 'SettingsController@update')->name('settings.update');
+    });
+
+    Route::prefix('media')->group(function () {
+        Route::post('upload', 'MediaController@store')->name('media.store');
+    });
+});

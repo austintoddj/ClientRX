@@ -6,6 +6,18 @@
  */
 
 require('./bootstrap');
+require('jquery.scrollbar');
+require('jquery-scroll-lock');
+require('datatables.net');
+require('datatables.net-buttons/js/dataTables.buttons.min');
+require('datatables.net-buttons/js/buttons.html5.min');
+require('datatables.net-buttons/js/buttons.print.min');
+require('jszip');
+require('jquery-mask-plugin');
+require('select2');
+require('./functions/app');
+require('./functions/vendors');
+require('./actions');
 
 window.Vue = require('vue');
 
@@ -17,10 +29,8 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
