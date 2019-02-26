@@ -4,7 +4,7 @@ namespace App\Helpers\User;
 
 class Gender
 {
-    const GENDERS = [
+    const GENDER_LIST = [
         'male',
         'female',
         'other',

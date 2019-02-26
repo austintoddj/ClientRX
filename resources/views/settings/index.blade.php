@@ -149,7 +149,7 @@
                                             <div class="form-group">
                                                 <label>State</label>
                                                 <select class="select2" name="state">
-                                                    @foreach(\App\Helpers\Data\States::US_STATES as $abbrev => $state)
+                                                    @foreach(\App\Helpers\Data\States::US_STATES_LIST as $abbrev => $state)
                                                         <option value="{{ $abbrev }}"
                                                                 @if($data['user']->address->state == $abbrev) selected @endif>{{ $state }}</option>
                                                     @endforeach
@@ -184,7 +184,7 @@
                                             <div class="form-group">
                                                 <label>Gender</label>
                                                 <select class="select2" name="gender">
-                                                    @foreach(\App\Helpers\User\Gender::GENDERS as $gender)
+                                                    @foreach(\App\Helpers\User\Gender::GENDER_LIST as $gender)
                                                         <option value="{{ $gender }}"
                                                             @if($data['user']->gender == $gender) selected @endif>
                                                             {{ ucfirst($gender) }}

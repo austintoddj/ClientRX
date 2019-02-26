@@ -24,13 +24,12 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 
     return [
-        'id'             => $faker->uuid,
         'first_name'     => $faker->firstName,
         'last_name'      => $faker->lastName,
         'email'          => $faker->unique()->safeEmail,
         'password'       => '$2y$10$uVBMEtjSEkWAGOi/D46ohOgOIaFMFk7/dSH0IeC2tf/sCkCy8fxZi', // password
         'dob'            => $faker->date(),
-        'gender'         => collect(Gender::GENDERS)->random(),
+        'gender'         => collect(Gender::GENDER_LIST)->random(),
         'bio'            => $faker->realText(),
         'social'         => $social_meta,
         'remember_token' => Str::random(10),

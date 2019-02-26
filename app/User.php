@@ -2,9 +2,8 @@
 
 namespace App;
 
-use App\Helpers\User\Roles;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Builder;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -12,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use LogsActivity, Notifiable, SoftDeletes;
+    use HasRoles, LogsActivity, Notifiable, SoftDeletes;
 
     /**
      * The table associated with the model.
@@ -20,27 +19,6 @@ class User extends Authenticatable
      * @var string
      */
     protected $table = 'users';
-
-    /**
-     * The primary key for the model.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'id';
-
-    /**
-     * The "type" of the auto-incrementing ID.
-     *
-     * @var string
-     */
-    protected $keyType = 'string';
-
-    /**
-     * Indicates if the ID's are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = false;
 
     /**
      * The attributes that aren't mass assignable.
@@ -115,16 +93,5 @@ class User extends Authenticatable
     public function getFullAddressAttribute($value): string
     {
         return sprintf('%s, %s %s', $this->address->address, $this->address->state, $this->address->zip);
-    }
-
-    /**
-     * Scope a query to only include clients.
-     *
-     * @param $query
-     * @return Builder
-     */
-    public function scopeClients($query): Builder
-    {
-        return $query->where('role_id', Roles::CLIENT);
     }
 }

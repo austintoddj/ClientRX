@@ -4,7 +4,7 @@ namespace App\Helpers\Data;
 
 class States
 {
-    const US_STATES = [
+    const US_STATES_LIST = [
         'AL' => 'Alabama',
         'AK' => 'Alaska',
         'AZ' => 'Arizona',

@@ -14,6 +14,8 @@ class UsersTableSeeder extends Seeder
         factory(App\User::class, 15)->create()->each(function ($user) {
             $user->address()->save(factory(App\Address::class)->make());
             $user->phoneNumber()->save(factory(App\PhoneNumber::class)->make());
+
+            $user->assignRole('client');
         });
     }
 }
