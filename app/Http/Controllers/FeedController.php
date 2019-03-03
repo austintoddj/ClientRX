@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class DashboardController extends Controller
+class FeedController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the news feed.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -15,6 +15,6 @@ class DashboardController extends Controller
             'user' => auth()->user(),
         ];
 
-        return view('dashboard.index', compact('data'));
+        return view('feed.index', compact('data'));
     }
 }

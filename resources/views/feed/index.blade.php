@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'News Feed')
 
 @section('content')
     @include('components.spinners.page-loader')
@@ -9,7 +9,7 @@
 
     <section class="content">
         <header class="content__title">
-            <h1>Dashboard</h1>
+            <h1>News Feed</h1>
             <small>Welcome to the unique Material Design admin web app experience!</small>
 
             <div class="actions">

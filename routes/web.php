@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     // Dashboard routes...
-    Route::get('dashboard', 'DashboardController')->name('dashboard');
+    Route::get('feed', 'FeedController')->name('feed');
 
     // User routes...
     Route::prefix('user')->group(function () {

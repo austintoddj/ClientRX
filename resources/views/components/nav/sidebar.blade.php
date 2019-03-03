@@ -34,8 +34,7 @@
         </div>
 
         <ul class="navigation">
-            <li class="{{ app('router')->is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-newspaper"></i> News Feed</a></li>
+            <li class="{{ app('router')->is('feed') ? 'navigation__active' : '' }}"><a href="{{ route('feed') }}"><i class="fas fa-newspaper"></i> News Feed</a></li>
             <li class="navigation__sub {{ app('router')->is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
                 <a href=""><i class="fas fa-users"></i> Clients</a>
                 <ul>

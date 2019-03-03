@@ -8,7 +8,7 @@
     </div>
 
     <div class="header__logo hidden-sm-down">
-        <h1><a href="{{ route('dashboard') }}">{{ config('app.name') }}</a></h1>
+        <h1><a href="{{ route('feed') }}">{{ config('app.name') }}</a></h1>
     </div>
 
     <form class="search">
