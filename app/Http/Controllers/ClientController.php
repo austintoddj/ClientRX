@@ -21,7 +21,6 @@ class ClientController extends Controller
         });
 
         $data = [
-            'user'    => auth()->user(),
             'clients' => $clients,
         ];
 

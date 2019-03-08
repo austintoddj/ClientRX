@@ -11,7 +11,7 @@
         <div class="content__inner content__inner--sm">
             <header class="content__title">
                 <h1>Settings</h1>
-                <small>Last edited on {{ $data['user']->updated_at->format('F d, Y') }}</small>
+                <small>Last edited on {{ auth()->user()->updated_at->format('F d, Y') }}</small>
 
                 <div class="actions">
                     <a href="" class="actions__item fas fa-chart-line"></a>
@@ -32,13 +32,13 @@
                 <div class="new-contact__header">
                     <a href="#" class="fas fa-camera new-contact__upload" data-target="#avatar" data-toggle="modal"></a>
                     <img
-                        @isset($data['user']->profile_image)
-                            src="{{ $data['user']->profile_image }}"
+                        @isset(auth()->user()->profile_image)
+                            src="{{ auth()->user()->profile_image }}"
                         @else
-                            src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
+                            src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim(auth()->user()->email))), '?s=500') }}"
                         @endisset
                          class="new-contact__img"
-                         alt="{{ $data['user']->name }}">
+                         alt="{{ auth()->user()->name }}">
                 </div>
 
                 <div class="card-body">
@@ -66,7 +66,7 @@
                                                 <label>First Name</label>
                                                 <input type="text" name="first_name"
                                                        class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}"
-                                                       placeholder="eg: Samuel" value="{{ $data['user']->first_name }}"
+                                                       placeholder="eg: Samuel" value="{{ auth()->user()->first_name }}"
                                                        required>
                                                 @if ($errors->has('first_name'))
                                                     <div class="invalid-feedback" role="alert">
@@ -83,7 +83,7 @@
                                                 <label>Last Name</label>
                                                 <input type="text" name="last_name"
                                                        class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}"
-                                                       placeholder="eg: Nicholas" value="{{ $data['user']->last_name }}"
+                                                       placeholder="eg: Nicholas" value="{{ auth()->user()->last_name }}"
                                                        required>
                                                 @if ($errors->has('last_name'))
                                                     <div class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                                                 <input type="text" name="email"
                                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                                        placeholder="eg: name@example.com"
-                                                       value="{{ $data['user']->email }}" required>
+                                                       value="{{ auth()->user()->email }}" required>
                                                 @if ($errors->has('email'))
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('email') }}</strong>
@@ -117,7 +117,7 @@
                                                 <label>Phone</label>
                                                 <input type="text" name="phone_number" class="form-control input-mask"
                                                        data-mask="(000) 000-0000" placeholder="eg: (000) 000-0000"
-                                                       value="{{ $data['user']->phoneNumber->phone_number }}">
+                                                       value="{{ auth()->user()->phoneNumber->phone_number }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -128,7 +128,7 @@
                                                 <label>Address</label>
                                                 <input type="text" name="address" class="form-control"
                                                        placeholder="eg: 1502 5th St"
-                                                       value="{{ $data['user']->address->address }}">
+                                                       value="{{ auth()->user()->address->address }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -139,7 +139,7 @@
                                                 <label>City</label>
                                                 <input type="text" name="city" class="form-control"
                                                        placeholder="eg: Twentynine Palms"
-                                                       value="{{ $data['user']->address->city }}">
+                                                       value="{{ auth()->user()->address->city }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -151,7 +151,7 @@
                                                 <select class="select2" name="state">
                                                     @foreach(\App\Helpers\Data\States::US_STATES_LIST as $abbrev => $state)
                                                         <option value="{{ $abbrev }}"
-                                                                @if($data['user']->address->state == $abbrev) selected @endif>{{ $state }}</option>
+                                                                @if(auth()->user()->address->state == $abbrev) selected @endif>{{ $state }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -163,7 +163,7 @@
                                                 <label>Postal Code</label>
                                                 <input type="text" name="zip" class="form-control input-mask"
                                                        data-mask="00000" placeholder="eg: 92278"
-                                                       value="{{ $data['user']->address->zip }}">
+                                                       value="{{ auth()->user()->address->zip }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -174,7 +174,7 @@
                                                 <label>Date of Birth (m/d/y)</label>
                                                 <input type="text" name="dob" id="dob" class="form-control input-mask"
                                                        data-mask="00/00/0000" placeholder="eg: 10/11/1775"
-                                                       value="{{ \Carbon\Carbon::parse($data['user']->dob)->format('m/d/Y') }}">
+                                                       value="{{ \Carbon\Carbon::parse(auth()->user()->dob)->format('m/d/Y') }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -186,7 +186,7 @@
                                                 <select class="select2" name="gender">
                                                     @foreach(\App\Helpers\User\Gender::GENDER_LIST as $gender)
                                                         <option value="{{ $gender }}"
-                                                            @if($data['user']->gender == $gender) selected @endif>
+                                                            @if(auth()->user()->gender == $gender) selected @endif>
                                                             {{ ucfirst($gender) }}
                                                         </option>
                                                     @endforeach
@@ -199,7 +199,7 @@
                                     <div class="form-group">
                                         <label>Bio</label>
                                         <textarea name="bio"
-                                                  class="form-control textarea-autosize">{{ $data['user']->bio }}</textarea>
+                                                  class="form-control textarea-autosize">{{ auth()->user()->bio }}</textarea>
                                         <i class="form-group__bar"></i>
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@
                                                 <label>Instagram</label>
                                                 <input type="text" name="social[facebook]"
                                                        class="form-control"
-                                                       placeholder="eg: samuelnicholas" value="{{ $data['user']->social['facebook'] ?? '' }}">
+                                                       placeholder="eg: samuelnicholas" value="{{ auth()->user()->social['facebook'] ?? '' }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@
                                                 <label>Twitter</label>
                                                 <input type="text" name="social[twitter]"
                                                        class="form-control"
-                                                       placeholder="eg: samuelnicholas" value="{{ $data['user']->social['twitter'] ?? '' }}">
+                                                       placeholder="eg: samuelnicholas" value="{{ auth()->user()->social['twitter'] ?? '' }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -235,7 +235,7 @@
                                                 <label>YouTube</label>
                                                 <input type="text" name="social[youtube]"
                                                        class="form-control"
-                                                       placeholder="eg: samuelnicholas" value="{{ $data['user']->social['youtube'] ?? '' }}">
+                                                       placeholder="eg: samuelnicholas" value="{{ auth()->user()->social['youtube'] ?? '' }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>
@@ -246,7 +246,7 @@
                                                 <label>Facebook</label>
                                                 <input type="text" name="social[instagram]"
                                                        class="form-control"
-                                                       placeholder="eg: samuelnicholas" value="{{ $data['user']->social['instagram'] ?? '' }}">
+                                                       placeholder="eg: samuelnicholas" value="{{ auth()->user()->social['instagram'] ?? '' }}">
                                                 <i class="form-group__bar"></i>
                                             </div>
                                         </div>

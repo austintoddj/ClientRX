@@ -11,10 +11,6 @@ class FeedController extends Controller
      */
     public function __invoke()
     {
-        $data = [
-            'user' => auth()->user(),
-        ];
-
-        return view('feed.index', compact('data'));
+        return view('feed.index');
     }
 }

@@ -45,4 +45,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('media')->group(function () {
         Route::post('upload', 'MediaController@store')->name('media.store');
     });
+
+    Route::prefix('search')->group(function () {
+        Route::post('', 'SearchController')->name('search');
+    });
 });

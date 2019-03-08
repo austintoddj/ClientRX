@@ -3,21 +3,21 @@
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
                 <img
-                    @isset($data['user']->profile_image)
-                        src="{{ $data['user']->profile_image }}"
+                    @isset(auth()->user()->profile_image)
+                        src="{{ auth()->user()->profile_image }}"
                     @else
-                        src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
+                        src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim(auth()->user()->email))), '?s=500') }}"
                     @endisset
                      class="user__img"
-                     alt="{{ $data['user']->fullName }}">
+                     alt="{{ auth()->user()->fullName }}">
                 <div>
-                    <div class="user__name">{{ $data['user']->fullName }}</div>
-                    <div class="user__email">{{ $data['user']->email }}</div>
+                    <div class="user__name">{{ auth()->user()->fullName }}</div>
+                    <div class="user__email">{{ auth()->user()->email }}</div>
                 </div>
             </div>
 
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('user.show', $data['user']->id) }}">View profile</a>
+                <a class="dropdown-item" href="{{ route('user.show', auth()->user()->id) }}">View profile</a>
                 <a class="dropdown-item" href="{{ route('settings.index') }}">Settings</a>
                 <a class="dropdown-item" href="#">Privacy and security</a>
 
