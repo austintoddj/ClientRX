@@ -3,9 +3,8 @@
 namespace App\Helpers\Utilities;
 
 /**
- * Class Stopwatch
+ * Class Stopwatch.
  *
- * @package App\Helpers\Utilities
  * @source https://gist.github.com/chuckreynolds/c93791dc8179288a7d08c29f31bf1080
  */
 class Stopwatch
