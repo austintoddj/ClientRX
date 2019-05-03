@@ -18,7 +18,7 @@
         "cross-env": "^5.1",
         "datatables.net": "^1.10.19",
         "datatables.net-buttons": "^1.5.4",
-        "jquery": "^3.2",
+        "jquery": "^3.4",
         "jquery-mask-plugin": "^1.14.15",
         "jquery-scroll-lock": "^3.1.3",
         "jquery.scrollbar": "^0.2.11",
