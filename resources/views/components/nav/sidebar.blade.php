@@ -3,21 +3,21 @@
         <div class="user">
             <div class="user__info" data-toggle="dropdown">
                 <img
-                    @isset($data['user']->profile_image)
-                        src="{{ $data['user']->profile_image }}"
+                    @isset(auth()->user()->profile_image)
+                        src="{{ auth()->user()->profile_image }}"
                     @else
-                        src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
+                        src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim(auth()->user()->email))), '?s=500') }}"
                     @endisset
                      class="user__img"
-                     alt="{{ $data['user']->fullName }}">
+                     alt="{{ auth()->user()->fullName }}">
                 <div>
-                    <div class="user__name">{{ $data['user']->fullName }}</div>
-                    <div class="user__email">{{ $data['user']->email }}</div>
+                    <div class="user__name">{{ auth()->user()->fullName }}</div>
+                    <div class="user__email">{{ auth()->user()->email }}</div>
                 </div>
             </div>
 
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('user.show', $data['user']->id) }}">View profile</a>
+                <a class="dropdown-item" href="{{ route('user.show', auth()->user()->id) }}">View profile</a>
                 <a class="dropdown-item" href="{{ route('settings.index') }}">Settings</a>
                 <a class="dropdown-item" href="#">Privacy and security</a>
 
@@ -34,8 +34,7 @@
         </div>
 
         <ul class="navigation">
-            <li class="{{ app('router')->is('dashboard') ? 'navigation__active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-newspaper"></i> News Feed</a></li>
+            <li class="{{ app('router')->is('feed') ? 'navigation__active' : '' }}"><a href="{{ route('feed') }}"><i class="fas fa-newspaper"></i> News Feed</a></li>
             <li class="navigation__sub {{ app('router')->is('client*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
                 <a href=""><i class="fas fa-users"></i> Clients</a>
                 <ul>

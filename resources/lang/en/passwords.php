@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
+    'password' => 'Passwords must be at least eight characters and match the confirmation.',
     'reset' => 'Your password has been reset!',
     'sent' => 'Check your email for a link to reset your password.',
     'token' => 'This password reset token is invalid.',

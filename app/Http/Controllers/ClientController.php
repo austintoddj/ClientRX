@@ -14,9 +14,14 @@ class ClientController extends Controller
      */
     public function index()
     {
+        $users = User::with('roles')->get();
+
+        $clients = $users->filter(function ($user, $key) {
+            return $user->hasRole('client');
+        });
+
         $data = [
-            'user'    => auth()->user(),
-            'clients' => User::clients()->get(),
+            'clients' => $clients,
         ];
 
         return view('client.index', compact('data'));

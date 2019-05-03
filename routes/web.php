@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     // Dashboard routes...
-    Route::get('dashboard', 'DashboardController')->name('dashboard');
+    Route::get('feed', 'FeedController')->name('feed');
 
     // User routes...
     Route::prefix('user')->group(function () {
@@ -44,5 +44,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::prefix('media')->group(function () {
         Route::post('upload', 'MediaController@store')->name('media.store');
+    });
+
+    Route::prefix('search')->group(function () {
+        Route::post('', 'SearchController')->name('search');
     });
 });
